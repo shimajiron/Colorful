@@ -12,6 +12,7 @@ public struct ColorfulView: View {
 
     @State var randomization: [PointRandomization]
     @State var size: CGSize = .init()
+    @State var firstboot: Bool = true
 
     private let colorElements: [Color]
     private let animated: Bool
@@ -120,7 +121,10 @@ public struct ColorfulView: View {
             dispatchUpdate()
         }
         .onAppear {
-            randomizationStart()
+            if firstboot {
+                randomizationStart()
+                firstboot = false
+            }
         }
     }
 
