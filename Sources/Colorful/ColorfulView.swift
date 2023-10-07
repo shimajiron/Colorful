@@ -161,7 +161,7 @@ public struct ColorfulView: View {
         if self.size == size { return }
         DispatchQueue.main.async {
             self.size = size
-        //     self.dispatchUpdate()
+        //     self.dispatchUpdate() // Memory Leak
         }
     }
 }
