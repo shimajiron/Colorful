@@ -153,15 +153,15 @@ public struct ColorfulView: View {
     }
 
     private func obtainRangeAndUpdate(size: CGSize) -> [PointRandomization] {
-        // issueSizeUpdate(withValue: size)
+        issueSizeUpdate(withValue: size)
         return randomization
     }
 
     private func issueSizeUpdate(withValue size: CGSize) {
-        // if self.size == size { return }
-        // DispatchQueue.main.async {
-        //     self.size = size
+        if self.size == size { return }
+        DispatchQueue.main.async {
+            self.size = size
         //     self.dispatchUpdate()
-        // }
+        }
     }
 }
